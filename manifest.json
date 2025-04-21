@@ -30,6 +30,7 @@
                 "*://*.moodle.monbureaunumerique.fr/*"
             ],
             "js": [
+                "lib/jquery-3.7.1.min.js",
                 "moodleAuto.js"
             ]
         }

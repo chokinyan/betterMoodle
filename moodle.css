@@ -2,8 +2,23 @@
     margin: 0 !important;
 }
 
-#page-header:first-child{
+#page-header__name{
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+}
+
+.secondary-navigation .navigation{
+    border: none !important;
+}
+
+.secondary-navigation::after{
+    position: absolute !important;
+    content: "" !important;
+    width: 100% !important;
+    height: 1px !important;
+    background: #e0e0e0 !important;
+    z-index: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }

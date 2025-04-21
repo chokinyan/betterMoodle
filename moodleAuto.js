@@ -1,3 +1,5 @@
+var depliment = document.getElementById("collapsesections").cloneNode(true); // variable pour stocker le clone du bouton de depliement des sections
+depliment.className += " nav-link";
 
 /* 
     Telechargement de tout les fichier d'un cours moodle
@@ -59,19 +61,29 @@
 
 /*Suppression inutile*/
 
-try {
+if (document.getElementsByClassName("drawer-left-toggle")[0] !== undefined) {
     document.getElementsByClassName("drawer-left-toggle")[0].remove();
 }
-catch (e) {
-    console.log(e);
+
+if (document.getElementById("page-header").firstElementChild.firstChild !== undefined && document.getElementById("page-header").firstElementChild.childElementCount !== 1) {
+    document.getElementById("page-header").firstElementChild.firstElementChild.remove();
 }
-try {
-    if(document.getElementById("page-header").firstElementChild.querySelectorAll("div").length === 2) {
-        document.getElementById("page-header").firstElementChild.querySelectorAll("div")[0].remove();
-    }
+
+if (document.getElementById("collapsesections") !== undefined) {
+    
+    document.getElementById("collapsesections").remove();
+
+    const li = document.createElement('li');
+    
+    li.appendChild(depliment);
+    li.className = "nav-item";
+    li.setAttribute("data-forceintomoremenu", "false");
+    li.setAttribute("data-key", "ByChokinyan");
+    li.role = "none";
+    
+    document.getElementsByClassName("secondary-navigation")[0].firstElementChild.firstElementChild.appendChild(li);
 }
-catch (e) {
-    console.log(e);
-}
+
+document.getElementById("page-header").firstElementChild.id = "page-header__name";
 
 chrome.runtime.sendMessage({ action: "EditCSS" });
