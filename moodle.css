@@ -1,0 +1,9 @@
+#page.drawers .main-inner {
+    margin: 0 !important;
+}
+
+#page-header:first-child{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
