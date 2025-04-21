@@ -1,5 +1,13 @@
-var depliment = document.getElementById("collapsesections").cloneNode(true); // variable pour stocker le clone du bouton de depliement des sections
-depliment.className += " nav-link";
+var $depliment = $("#collapsesections").clone(true,true); // variable pour stocker le clone du bouton de depliement des sections
+$depliment[0].classList.add("nav-link"); // ajout de la class nav-link pour le style
+var DivCours = []; // tableau contenant les divs des cours
+$depliment[0].getAttribute("aria-controls").split(" ").forEach((value,_index,_array)=>{
+    DivCours.push(document.getElementById(value)); // ajout de la div du cours dans le tableau
+}); // tableau contenant les divs des cours
+
+/* Collapse = rentré */
+
+console.log(DivCours); // affichage des divs des cours dans la console
 
 /* 
     Telechargement de tout les fichier d'un cours moodle
@@ -34,11 +42,13 @@ depliment.className += " nav-link";
 //    };
 //
 //    var nombreCours = document.querySelectorAll(".course-section").length;
-//    var DivCours = []; // tableau contenant les divs des cours
+//    
 //    var Cours = []; // tableau contenant les liens des cours et le nom des fichiers
 //    for (let i = 0; i < nombreCours; i++) {
 //        DivCours[i] = document.getElementById(`coursecontentcollapse${i}`);
 //    }
+//BIG INFO
+//aria-controls
 //
 //    for (let cours of DivCours) {
 //        for (let a of cours.querySelectorAll('a')) {
@@ -75,8 +85,8 @@ if (document.getElementById("collapsesections") !== undefined) {
 
     const li = document.createElement('li');
     
-    li.appendChild(depliment);
-    li.className = "nav-item";
+    $depliment.appendTo(li); // ajout du bouton depliement dans le li
+    li.classList.add("nav-item"); // ajout de la class nav-item pour le style
     li.setAttribute("data-forceintomoremenu", "false");
     li.setAttribute("data-key", "ByChokinyan");
     li.role = "none";
