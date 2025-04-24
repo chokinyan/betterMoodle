@@ -1,18 +1,19 @@
+/* Moodle CSS for custom theme */
 #page.drawers .main-inner {
     margin: 0 !important;
 }
 
-#page-header__name{
+#page-header__name {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
 }
 
-.secondary-navigation .navigation{
+.secondary-navigation .navigation {
     border: none !important;
 }
 
-.secondary-navigation::after{
+.secondary-navigation::after {
     position: absolute !important;
     content: "" !important;
     width: 100% !important;
@@ -21,4 +22,35 @@
     z-index: 1 !important;
     margin: 0 !important;
     padding: 0 !important;
+}
+
+.separator {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border: none !important;
+    background: none !important;
+}
+
+.Cours-container {
+    align-items: center !important;
+}
+
+.activity-instance{
+    position: relative !important;
+    left: 10% !important;
+    width: 50% !important;
+}
+
+.downloadCheck{
+    position: relative !important;
+    left: 15% !important;
+}
+
+@media (min-width: 768px) {
+    #page.drawers {
+        padding-left: 1.75rem !important;
+        padding-right: 1.75rem !important;
+    }
 }
